@@ -1,0 +1,16 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    _instanceof:
+        DimkinThePro\CommandQuery\Query\QueryHandlerInterface:
+            tags:
+                - { name: messenger.message_handler, bus: query_bus }
+
+        DimkinThePro\CommandQuery\Command\CommandHandlerInterface:
+            tags:
+                - { name: messenger.message_handler, bus: command_bus }
+
+    DimkinThePro\CommandQuery\:
+        resource: '../../'
