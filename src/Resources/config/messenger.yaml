@@ -1,0 +1,10 @@
+framework:
+    messenger:
+        default_bus: query_bus
+
+        buses:
+            query_bus: ~
+
+            command_bus:
+                middleware:
+                    - doctrine_transaction

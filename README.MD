@@ -6,12 +6,13 @@ composer require dimkinthepro/command-query-bundle
 ```
 
 ### update "config/bundles.php"
+
 ```php
 <?php
 
 return [
 #...
-    DimkinThePro\CommandQuery\CommandQueryBundle::class => ['all' => true],
+    DimkinThePro\CommandQuery\DimkinTheProCommandQueryBundle::class => ['all' => true],
 ];
 ```
 

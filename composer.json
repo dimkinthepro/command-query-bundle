@@ -40,21 +40,10 @@
         }
     },
     "scripts": {
-        "cs-fixer": [
-            "php-cs-fixer fix ./src ./tests --diff --config=php-cs-fixer.php"
-        ],
-        "phpcs": [
-            "phpcs ./src ./tests --standard=phpcs.xml -d memory_limit=500M"
-        ],
-        "phpstan": [
-            "phpstan analyse -c phpstan.neon --memory-limit=500M -vvv --debug"
-        ],
-        "check-code-style": [
-            "@cs-fixer",
-            "@phpcs",
-            "@phpstan"
-        ],
-        "test": [
+        "check-code": [
+            "php-cs-fixer fix ./src ./tests --diff --config=php-cs-fixer.php",
+            "phpcs ./src ./tests --standard=phpcs.xml -d memory_limit=500M",
+            "phpstan analyse -c phpstan.neon --memory-limit=500M",
             "vendor/bin/phpunit"
         ]
     }
